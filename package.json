@@ -1,0 +1,15 @@
+{
+  "name": "nx-workshop",
+  "version": "1.0.0",
+  "description": "A simple monorepo project to be used in nx workspace sessions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavinda1995/nx-workshop.git"
+  },
+  "author": "Kavinda Jayakody",
+  "license": "ISC",
+  "homepage": "https://github.com/kavinda1995/nx-workshop#readme",
+  "workspaces": [
+    "apps/backend"
+  ]
+}

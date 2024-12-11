@@ -1,15 +1,18 @@
 {
-  "name": "nx-workshop",
-  "version": "1.0.0",
-  "description": "A simple monorepo project to be used in nx workspace sessions",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kavinda1995/nx-workshop.git"
-  },
-  "author": "Kavinda Jayakody",
-  "license": "ISC",
-  "homepage": "https://github.com/kavinda1995/nx-workshop#readme",
+  "name": "@nx-workspace/monorepo",
+  "private": true,
   "workspaces": [
-    "apps/backend"
-  ]
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "start-backend": "npm run start -workspace=@nx-workshop/backend",
+    "start-pos": "npm run start -workspace=@nx-workshop/pos",
+    "start-website": "npm run start -workspace=@nx-workshop/website",
+    "build-ui": "npm run build -workspace=@nx-workshop/ui"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0"
+  }
 }

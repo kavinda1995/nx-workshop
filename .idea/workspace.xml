@@ -4,25 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a9afd43-f774-419c-860b-49757f34911b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/backend/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pos/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pos/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pos/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/website/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/website/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/website/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/ui/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/ui/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/ui/src/ProductCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/ui/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="9a9afd43-f774-419c-860b-49757f34911b" name="Changes" comment="Init">
+      <change afterPath="$PROJECT_DIR$/apps/backend/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/backend/__tests__/app.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/pos/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/pos/src/__tests__/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/website/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/website/src/__tests__/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/backend/src/app.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/backend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pos/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pos/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/website/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/website/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -30,6 +22,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,7 +47,9 @@
   "associatedIndex": 2
 }]]></component>
   <component name="ProjectId" id="2q4yc1wfY8JIxMQQ7qb1HSBHqs7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -59,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Jest.renders POS App.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -68,12 +68,18 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/Users/kavindajayakody/Projects/personal/nx-workshop/node_modules/react-scripts",
     "nodejs_package_manager_path": "npm",
     "npm.build-ui.executor": "Run",
+    "npm.lint.executor": "Run",
+    "npm.pos > start.executor": "Run",
+    "npm.pos > test.executor": "Run",
     "npm.start-all.executor": "Run",
     "npm.start-backend.executor": "Run",
     "npm.start-pos.executor": "Run",
     "npm.start-website.executor": "Run",
+    "npm.test.executor": "Run",
+    "ts.external.directory.path": "/Users/kavindajayakody/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -85,22 +91,24 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start-website">
-    <configuration name="build-ui" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build-ui" />
-      </scripts>
+  <component name="RunManager" selected="npm.pos &gt; start">
+    <configuration name="renders POS App" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/apps/pos" />
       <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/apps/pos/src/__tests__/App.test.js" />
+      <test-names>
+        <test-name value="renders POS App" />
+      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="start-all" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+    <configuration name="pos &gt; start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/apps/pos/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start-all" />
+        <script value="start" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -138,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.pos &gt; start" />
         <item itemvalue="npm.start-website" />
         <item itemvalue="npm.start-pos" />
         <item itemvalue="npm.start-backend" />
-        <item itemvalue="npm.build-ui" />
-        <item itemvalue="npm.start-all" />
+        <item itemvalue="Jest.renders POS App" />
       </list>
     </recent_temporary>
   </component>
@@ -161,11 +169,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733936218599</updated>
-      <workItem from="1733936220310" duration="388000" />
+      <workItem from="1733936220310" duration="1976000" />
     </task>
+    <task id="LOCAL-00001" summary="Init">
+      <option name="closed" value="true" />
+      <created>1733936721186</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733936721186</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init" />
   </component>
 </project>

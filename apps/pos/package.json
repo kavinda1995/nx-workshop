@@ -2,7 +2,7 @@
   "name": "@nx-workshop/pos",
   "version": "1.0.0",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
